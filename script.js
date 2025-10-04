@@ -7,16 +7,29 @@
 //     fire:"red",
 //     water:"blue"
 // }
-const typesClasses ={
-    grass:"grass",
-    fire:"fire",
-    water:"water",
+const typesClasses = {
+    normal: "normal",
+    fire: "fire",
+    water: "water",
+    grass: "grass",
+    electric: "electric",
+    ice: "ice",
+    fighting: "fighting",
+    poison: "poison",
+    ground: "ground",
     flying: "flying",
-    bug: "bug"
-}
+    psychic: "psychic",
+    bug: "bug",
+    rock: "rock",
+    ghost: "ghost",
+    dragon: "dragon",
+    dark: "dark",
+    steel: "steel",
+    fairy: "fairy"
+};
 
 async function getPokemons(){
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon")
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1302")
     const pokemons = await response.json()
     const ul = document.querySelector("ul")
     pokemons.results.forEach(async(pokemon)=>{
